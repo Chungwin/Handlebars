@@ -15,7 +15,29 @@
   <!-- Dynamic Handlebars templalte which will be populated with JSON data-->
   <script id="petsTemplate" type="text/xhandlebars-template">
     {{#each pets}}
-      <h2>{{name}}</h2>
+      <div class="pet">
+
+        <!-- Column1 Photo -->
+        <div class="photo-column">
+          <img src="{{photo}}">
+        </div>
+
+        <!-- Column2 Info -->
+        <div class="info-column">
+          <h2>{{name}} <span class="species">({{species}})</span></h2>
+
+          <!-- favFoods is an array inside an object -->
+          {{#if favFoods}}
+          <h4 class="headline-bar">Favorite Foods</h4>
+          <ul class="favorite-foods">
+            {{#each favFoods}}
+              <li>{{{this}}}</li>
+            {{/each}}
+          </ul>
+          {{/if}}
+
+        </div>
+      </div>
     {{/each}}
   </script>
 
