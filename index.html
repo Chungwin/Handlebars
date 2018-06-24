@@ -12,6 +12,14 @@
   <div id="pets-container"></div>
   </div>
 
+  <!-- Dynamic Handlebars templalte which will be populated with JSON data-->
+  <script id="petsTemplate" type="text/xhandlebars-template">
+    {{#each pets}}
+      <h2>{{name}}</h2>
+    {{/each}}
+  </script>
+
+  <script src="js/handlebars-v4.0.11.js"></script>
   <script src="js/main.js"></script>
 </body>
 
